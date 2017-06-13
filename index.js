@@ -9,7 +9,7 @@ server.route({
     method: 'GET',
     path: '/',
     handler: function (request, reply) {
-	reply('Hello root');
+	    reply('Hello root');
     }
 });
 
@@ -17,13 +17,13 @@ server.route({
     method: 'GET',
     path: '/{name}',
     handler: function(request, reply) {
-	reply('Hello ' + encodeURIComponent(request.params.name));
+	    reply('Hello ' + encodeURIComponent(request.params.name));
     }
 });
 
 server.start((err) => {
     if(err) {
-	throw err;
+	    throw err;
     }
 
     console.log(`Listening to: ${server.info.uri}`);
