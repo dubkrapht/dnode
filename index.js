@@ -1,6 +1,7 @@
 'use strict'
 
 var Hapi = require('hapi');
+var Routes = require('./routes.js');
 var server = new Hapi.Server();
 
 server.connection({port: 3000, host: 'localhost'});
@@ -11,13 +12,7 @@ server.ext('onRequest', function(request, next) {
     next();
 });
 
-server.route({
-    method: 'GET',
-    path: '/',
-    handler: function (request, reply) {
-	    reply('Hello root');
-    }
-});
+server.route(Routes.endpoints);
 
 server.start((err) => {
     if(err) {
