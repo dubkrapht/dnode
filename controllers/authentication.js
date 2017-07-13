@@ -1,6 +1,5 @@
 var Joi = require('joi');
-var Database = require('../db/dbconnect');
-// var User = require('../models/user').User;
+var User = require('../models/user').User;
 
 module.exports = {
     register: {
@@ -12,7 +11,18 @@ module.exports = {
             }
         },
         handler: (request, reply) => {
-            reply(request.payload.password);
+            var newUser = new User({
+                email: request.payload.email
+            });
+
+            User.register(newUser, request.payload.password, (err, user) => {
+                if(err) {
+                    return reply(err);
+                }
+
+                console.log('registered');
+                return reply.redirect('/login');
+            });
         }
     },
     login: {

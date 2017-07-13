@@ -1,4 +1,5 @@
-var Mongoose = require('../dbconnect').Mongoose;
+var Mongoose = require('../db/dbconnect').Mongoose;
+var passportLocalMongoose = require('passport-local-mongoose');
 
 var userSchema = new Mongoose.Schema({
     email: {
@@ -16,6 +17,8 @@ var userSchema = new Mongoose.Schema({
     }
 });
 
-var User = Mongoose.mode('User', userSchema, 'Users');
+userSchema.plugin(passportLocalMongoose, { usernameField: 'email', hashField: 'password', usernameLowerCase: true });  
+
+var User = Mongoose.model('User', userSchema, 'Users');
 
 exports.User = User;
