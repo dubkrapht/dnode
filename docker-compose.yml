@@ -1,0 +1,11 @@
+version: "2"
+services:
+  admin:
+    build: ./app
+    container_name: dnode
+    ports:
+      - 8888:8888
+    volumes:
+      - ./app:/opt/app
+    environment: 
+      - NODE_ENV=production
