@@ -1,1 +1,8 @@
 node_modules
+.npm
+.eslintcache
+.node_repl_history
+*.tgz
+.env
+.vscode
+.idea
