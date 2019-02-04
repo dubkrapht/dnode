@@ -5,6 +5,7 @@
     "max-len": [2, { "code": 250 }],
     "class-methods-use-this": 0,
     "indent": ["error", 2],
-    "linebreak-style": 0
+    "linebreak-style": 0,
+    "no-param-reassign": 0
   }
 }

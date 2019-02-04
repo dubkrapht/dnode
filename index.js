@@ -1,7 +1,8 @@
 const Server = require('./server');
 
 (async () => {
-  await Server.start();
+  const server = await Server.load();
+  await Server.start(server);
 })().catch((err) => {
   // TODO add loggin service
   console.log(err);
