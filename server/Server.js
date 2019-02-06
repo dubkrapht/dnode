@@ -29,7 +29,7 @@ class Server {
   }
 
   async registerPlugins() {
-    this.server.register(this.plugins);
+    await this.server.register(this.plugins);
   }
 
   async registerRoutes() {

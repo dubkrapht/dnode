@@ -13,9 +13,9 @@ module.exports = {
       const server = new Server({
         config, dependencies, routes: null, plugins, strategies,
       });
-      server.registerPlugins();
-      server.loadDependencies();
-      server.registerAuthStrategies();
+      await server.registerPlugins();
+      await server.loadDependencies();
+      await server.registerAuthStrategies();
       return server;
     } catch (err) {
       throw err;
