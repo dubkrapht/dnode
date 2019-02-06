@@ -1,16 +1,19 @@
 require('dotenv').config();
 
-const Hapi = require('hapi');
-const serverConfig = require('./config');
-const injectDependencies = require('./dependencies');
+const config = require('./config');
+const dependencies = require('./dependencies');
+const plugins = require('./plugins');
+const strategies = require('./strategies');
+
+const Server = require('./Server');
 
 module.exports = {
-  load: async () => {
+  init: async () => {
     try {
-      let server = Hapi.server(serverConfig);
-      // load dependencies
-      server = await injectDependencies(server);
-      // load routes
+      const server = new Server({ config, dependencies, routes: null, plugins, strategies });
+      server.registerPlugins();
+      server.loadDependencies();
+      server.registerAuthStrategies();
       return server;
     } catch (err) {
       throw err;
@@ -19,7 +22,6 @@ module.exports = {
   start: async (server) => {
     try {
       await server.start();
-      console.log(`Server running at: ${server.info.uri}`);
     } catch (err) {
       throw err;
     }

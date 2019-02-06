@@ -1,8 +1,7 @@
 const { sendMail } = require('./mail');
+const moment = require('moment');
 
-module.exports = async (server) => {
-  // add to global server app space
-  server.app.sendMail = sendMail;
-  // add other dependencies like db models and such
-  return server;
+module.exports = {
+  sendMail,
+  moment,
 };
