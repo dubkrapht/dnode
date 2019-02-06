@@ -1,3 +1,5 @@
+const handle = require('./user.controller');
+
 module.exports = [
   {
     method: 'GET',
@@ -6,7 +8,7 @@ module.exports = [
       auth: false,
       description: 'Get all users',
       // validations
-      handler: async (request, h) => { return 'ok' },
+      handler: handle.get,
     },
   },
 ];
