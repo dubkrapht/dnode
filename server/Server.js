@@ -1,7 +1,9 @@
 const Hapi = require('hapi');
 
 class Server {
-  constructor({ config, dependencies, routes, plugins, strategies }) {
+  constructor({
+    config, dependencies, routes, plugins, strategies,
+  }) {
     this.config = config;
     this.dependencies = dependencies;
     this.routes = routes;

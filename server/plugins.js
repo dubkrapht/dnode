@@ -1,6 +1,6 @@
 const jwtAuth = require('hapi-auth-jwt2');
 
 module.exports = [
-  jwtAuth
+  jwtAuth,
   // TODO add different auth strategies, hapi swagger etc.
 ];

@@ -10,7 +10,9 @@ const Server = require('./Server');
 module.exports = {
   init: async () => {
     try {
-      const server = new Server({ config, dependencies, routes: null, plugins, strategies });
+      const server = new Server({
+        config, dependencies, routes: null, plugins, strategies,
+      });
       server.registerPlugins();
       server.loadDependencies();
       server.registerAuthStrategies();

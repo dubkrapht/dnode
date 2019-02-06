@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --inspect index.js"
+    "dev": "nodemon --inspect index.js",
+    "prod": "pm2 --watch index.js",
+    "lint": "./node_modules/eslint/bin/eslint.js ."
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,7 @@
     "hapi-auth-jwt2": "^8.3.0",
     "joi": "^14.3.1",
     "joi-date-extensions": "^1.2.0",
+    "moment": "^2.24.0",
     "nodemailer": "^5.1.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.2"
