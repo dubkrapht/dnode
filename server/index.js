@@ -10,10 +10,12 @@ const Server = require('./Server');
 module.exports = {
   init: async () => {
     try {
-      const server = new Server({ config, dependencies, routes: null, plugins, strategies });
-      server.registerPlugins();
-      server.loadDependencies();
-      server.registerAuthStrategies();
+      const server = new Server({
+        config, dependencies, routes: null, plugins, strategies,
+      });
+      await server.registerPlugins();
+      await server.loadDependencies();
+      await server.registerAuthStrategies();
       return server;
     } catch (err) {
       throw err;

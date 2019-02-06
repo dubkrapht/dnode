@@ -1,5 +1,5 @@
-const { sendMail } = require('./mail');
 const moment = require('moment');
+const { sendMail } = require('./mail');
 
 module.exports = {
   sendMail,

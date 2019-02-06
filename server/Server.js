@@ -1,7 +1,9 @@
 const Hapi = require('hapi');
 
 class Server {
-  constructor({ config, dependencies, routes, plugins, strategies }) {
+  constructor({
+    config, dependencies, routes, plugins, strategies,
+  }) {
     this.config = config;
     this.dependencies = dependencies;
     this.routes = routes;
@@ -27,7 +29,7 @@ class Server {
   }
 
   async registerPlugins() {
-    this.server.register(this.plugins);
+    await this.server.register(this.plugins);
   }
 
   async registerRoutes() {
