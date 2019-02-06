@@ -32,8 +32,8 @@ class Server {
     await this.server.register(this.plugins);
   }
 
-  async registerRoutes() {
-    // TODO register routes
+  registerRoutes() {
+    this.server.route(this.routes);
   }
 
   async start() {
