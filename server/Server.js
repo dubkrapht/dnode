@@ -16,6 +16,13 @@ class Server {
     Object.keys(this.dependencies).forEach((key) => {
       this.server.app[key] = this.dependencies[key];
     });
+    this.server.ext({
+      type: 'onRequest',
+      method: (request, h) => {
+        request.app = this.server.app;
+        return h.continue;
+      },
+    });
   }
 
   async registerAuthStrategies() {

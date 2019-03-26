@@ -1,5 +1,7 @@
-module.exports = {
-  get: async (request, h) => {
-    return 'ok';
-  },
-};
+class UserController {
+  async get(request, h) {
+    return request.app.moment();
+  }
+}
+
+module.exports = UserController;

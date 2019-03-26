@@ -1,4 +1,6 @@
-const handle = require('./user.controller');
+const UserController = require('./user.controller');
+
+const handler = new UserController();
 
 module.exports = [
   {
@@ -8,7 +10,7 @@ module.exports = [
       auth: false,
       description: 'Get all users',
       // validations
-      handler: handle.get,
+      handler: handler.get,
     },
   },
 ];
