@@ -7,7 +7,7 @@ module.exports = [
     method: 'GET',
     path: '/users',
     config: {
-      auth: false,
+      auth: 'jwt',
       description: 'Get all users',
       // validations
       handler: handler.get,
