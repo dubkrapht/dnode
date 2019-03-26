@@ -1,7 +1,7 @@
 const moment = require('moment');
-const { sendMail } = require('./mail');
+const { mailService } = require('../services');
 
 module.exports = {
-  sendMail,
+  sendMail: mailService.sendMail,
   moment,
 };
