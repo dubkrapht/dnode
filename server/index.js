@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const config = require('./config');
-const dependencies = require('./dependencies');
+const dependencyContainer = require('./dependencies');
 const routes = require('./routes');
 const plugins = require('./plugins');
 const strategies = require('./strategies');
@@ -12,7 +12,7 @@ module.exports = {
   init: async () => {
     try {
       const server = new Server({
-        config, dependencies, routes, plugins, strategies,
+        config, dependencyContainer, routes, plugins, strategies,
       });
       await server.registerPlugins();
       await server.loadDependencies();

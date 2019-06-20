@@ -1,8 +1,16 @@
 const jwt = require('jsonwebtoken');
 
-module.exports = {
-  signToken: user => jwt.sign(user, process.env.JWT_SECRET, {
-    algorithm: 'HS256',
-    expiresIn: 60 * 15,
-  }),
-};
+class AuthenticationService {
+  constructor(opts) {
+    this.opts = opts;
+  }
+
+  signToken(user) {
+    jwt.sign(user, process.env.JWT_SECRET, {
+      algorithm: 'HS256',
+      expiresIn: 60 * 15,
+    });
+  }
+}
+
+module.exports = AuthenticationService;

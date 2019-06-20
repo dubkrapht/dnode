@@ -2,10 +2,10 @@ const Hapi = require('hapi');
 
 class Server {
   constructor({
-    config, dependencies, routes, plugins, strategies,
+    config, dependencyContainer, routes, plugins, strategies,
   }) {
     this.config = config;
-    this.dependencies = dependencies;
+    this.dependencyContainer = dependencyContainer;
     this.routes = routes;
     this.plugins = plugins;
     this.strategies = strategies;
@@ -13,8 +13,9 @@ class Server {
   }
 
   async loadDependencies() {
-    Object.keys(this.dependencies).forEach((key) => {
-      this.server.app[key] = this.dependencies[key];
+    const dependencies = this.dependencyContainer.cradle;
+    Object.keys(dependencies).forEach((key) => {
+      this.server.app[key] = dependencies[key];
     });
     this.server.ext({
       type: 'onRequest',
