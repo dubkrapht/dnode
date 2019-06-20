@@ -23,11 +23,4 @@ module.exports = {
       throw err;
     }
   },
-  start: async (server) => {
-    try {
-      await server.start();
-    } catch (err) {
-      throw err;
-    }
-  },
 };
