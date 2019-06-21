@@ -5,5 +5,6 @@ const Server = require('./server');
   server.start();
 })().catch((err) => {
   // TODO add loggin service
+  // eslint-disable-next-line
   console.log(err);
 });

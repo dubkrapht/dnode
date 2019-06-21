@@ -1,5 +1,6 @@
 const jwtAuth = require('hapi-auth-jwt2');
-const good = require('good');
+const basicAuth = require('@hapi/basic');
+const good = require('@hapi/good');
 
 const goodOptions = {
   ops: {
@@ -8,12 +9,12 @@ const goodOptions = {
   reporters: {
     consoleReporter: [
       {
-        module: 'good-squeeze',
+        module: '@hapi/good-squeeze',
         name: 'Squeeze',
         args: [{ log: '*', response: '*', request: '*' }],
       },
       {
-        module: 'good-console',
+        module: '@hapi/good-console',
       },
       'stdout',
     ],
@@ -22,6 +23,7 @@ const goodOptions = {
 
 module.exports = [
   jwtAuth,
+  basicAuth,
   {
     plugin: good,
     options: goodOptions,

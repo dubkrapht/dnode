@@ -1,4 +1,4 @@
-const Hapi = require('hapi');
+const Hapi = require('@hapi/hapi');
 
 class Server {
   constructor({
@@ -28,11 +28,7 @@ class Server {
 
   async registerAuthStrategies() {
     Object.keys(this.strategies).forEach((strategy) => {
-      this.server.auth.strategy(strategy, strategy, {
-        key: process.env.JWT_SECRET,
-        validate: this.strategies[strategy],
-        verifyOptions: strategy === 'jwt' ? { algorithms: ['HS256'] } : null,
-      });
+      this.server.auth.strategy(strategy, this.strategies[strategy].scheme, this.strategies[strategy].config);
     });
   }
 
