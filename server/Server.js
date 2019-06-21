@@ -27,6 +27,7 @@ class Server {
   }
 
   async registerAuthStrategies() {
+    // TODO decide which one is default
     Object.keys(this.strategies).forEach((strategy) => {
       this.server.auth.strategy(strategy, this.strategies[strategy].scheme, this.strategies[strategy].config);
     });

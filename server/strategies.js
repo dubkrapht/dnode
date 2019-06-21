@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-
+// TODO maybe rewrite this file into separate modules?
 module.exports = {
   jwt: {
     scheme: 'jwt',
@@ -40,6 +40,16 @@ module.exports = {
           throw err;
         }
       },
+    },
+  },
+  twitter: {
+    scheme: 'bell',
+    config: {
+      provider: 'twitter',
+      password: '1234', // TODO change later
+      clientId: process.env.TWITTER_CLIENT_ID, // TODO decide what to do when these are not supplied
+      clientSecret: process.env.TWITTER_CLIENT_ID,
+      isSecure: false, // for local development
     },
   },
 };

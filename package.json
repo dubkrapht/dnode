@@ -21,6 +21,7 @@
   "homepage": "https://github.com/dubkrapht/dnode#readme",
   "dependencies": {
     "@hapi/basic": "^5.1.0",
+    "@hapi/bell": "^10.1.0",
     "@hapi/good": "^8.2.0",
     "@hapi/good-console": "^8.1.0",
     "@hapi/good-squeeze": "^5.2.0",
