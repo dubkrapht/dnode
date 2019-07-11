@@ -12,4 +12,12 @@ module.exports = [
       handler: handler.login,
     },
   },
+  {
+    method: 'GET',
+    path: '/auth/twitter',
+    config: {
+      auth: 'twitter',
+      handler: handler.twitter,
+    },
+  },
 ];

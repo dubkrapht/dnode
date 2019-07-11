@@ -46,9 +46,9 @@ module.exports = {
     scheme: 'bell',
     config: {
       provider: 'twitter',
-      password: '1234', // TODO change later
-      clientId: process.env.TWITTER_CLIENT_ID, // TODO decide what to do when these are not supplied
-      clientSecret: process.env.TWITTER_CLIENT_ID,
+      password: '1234', // TODO set to a secure password
+      clientId: process.env.TWITTER_API_KEY, // TODO decide what to do when these are not supplied
+      clientSecret: process.env.TWITTER_API_SECRET,
       isSecure: false, // for local development
     },
   },
