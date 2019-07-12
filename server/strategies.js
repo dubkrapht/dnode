@@ -47,9 +47,20 @@ module.exports = {
     config: {
       provider: 'twitter',
       password: '1234', // TODO set to a secure password
-      clientId: process.env.TWITTER_API_KEY, // TODO decide what to do when these are not supplied
+      clientId: process.env.TWITTER_API_KEY,
       clientSecret: process.env.TWITTER_API_SECRET,
       isSecure: false, // for local development
+    },
+  },
+  session: {
+    scheme: 'cookie',
+    config: {
+      cookie: {
+        name: 'dnode-cookie',
+        password: '4321',
+        isSecure: false,
+      },
+      redirectTo: '/auth/twitter',
     },
   },
 };

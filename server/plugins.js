@@ -1,5 +1,6 @@
 const jwtAuth = require('hapi-auth-jwt2');
 const basicAuth = require('@hapi/basic');
+const sessionAuth = require('@hapi/cookie');
 const bellAuth = require('@hapi/bell');
 const good = require('@hapi/good');
 
@@ -26,6 +27,7 @@ module.exports = [
   jwtAuth,
   basicAuth,
   bellAuth,
+  sessionAuth,
   {
     plugin: good,
     options: goodOptions,
