@@ -5,7 +5,7 @@ const Server = require('./server');
   // only for development
   server.server.events.on('request', (request, event) => {
     // console.log(request, 'R');
-    console.log(event, 'E');
+    // console.log(event, 'E');
   });
   server.start();
   console.log(`Server accepting requests on ${process.env.SERVER_HOST}:${process.env.SERVER_PORT}`);

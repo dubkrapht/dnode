@@ -24,6 +24,12 @@ class Server {
         return h.continue;
       },
     });
+    this.server.ext({
+      type: 'onPreResponse',
+      method: (request, h) => {
+        console.log(request.response);
+      },
+    });
   }
 
   async registerAuthStrategies() {
