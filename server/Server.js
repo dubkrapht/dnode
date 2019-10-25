@@ -10,6 +10,7 @@ class Server {
     this.plugins = plugins;
     this.strategies = strategies;
     this.server = Hapi.server(config);
+    this.NODE_ENV = process.env.NODE_ENV;
   }
 
   async loadDependencies() {
@@ -17,6 +18,9 @@ class Server {
     Object.keys(dependencies).forEach((key) => {
       this.server.app[key] = dependencies[key];
     });
+  }
+
+  decorateRequest() {
     this.server.ext({
       type: 'onRequest',
       method: (request, h) => {
@@ -27,7 +31,10 @@ class Server {
     this.server.ext({
       type: 'onPreResponse',
       method: (request, h) => {
-        console.log(request.response);
+        if (this.NODE_ENV === 'development') {
+          console.log(request.response);
+        }
+        return h.continue;
       },
     });
   }

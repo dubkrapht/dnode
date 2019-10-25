@@ -18,6 +18,7 @@ module.exports = {
       await server.loadDependencies();
       await server.registerAuthStrategies();
       server.registerRoutes();
+      server.decorateRequest();
       return server;
     } catch (err) {
       throw err;
