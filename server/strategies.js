@@ -42,14 +42,28 @@ module.exports = {
       },
     },
   },
-  twitter: {
+  twitter: { // OAUTH1
     scheme: 'bell',
     config: {
       provider: 'twitter',
-      password: '1234', // TODO set to a secure password
+      password: process.env.TWITTER_STRATEGY_PASSWORD,
       clientId: process.env.TWITTER_API_KEY,
       clientSecret: process.env.TWITTER_API_SECRET,
       isSecure: false, // for local development
+    },
+  },
+  twitterV2: { // OAUTH2
+    scheme: 'bell',
+    config: {
+      provider: {
+        protocol: 'oauth2',
+        auth: '/auth/twitterv2/auth',
+        token: '/auth/twitterv2/token',
+      },
+      isSecure: false,
+      clientId: process.env.TWITTER_API_KEY,
+      clientSecret: process.env.TWITTER_API_SECRET,
+      password: process.env.TWITTER_STRATEGY_PASSWORD,
     },
   },
   session: {

@@ -10,6 +10,14 @@ class AuthenticationController {
       throw err;
     }
   }
+
+  async twitterV2(request, h) {
+    try {
+      console.log(request.auth);
+    } catch (err) {
+      throw err;
+    }
+  }
 }
 
 module.exports = AuthenticationController;
