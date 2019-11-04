@@ -7,6 +7,7 @@ module.exports = [
     method: 'POST',
     path: '/login',
     config: {
+      tags: ['api'],
       auth: false,
       description: 'Get JWT',
       handler: handler.login,

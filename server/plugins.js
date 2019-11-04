@@ -3,6 +3,9 @@ const basicAuth = require('@hapi/basic');
 const sessionAuth = require('@hapi/cookie');
 const bellAuth = require('@hapi/bell');
 const good = require('@hapi/good');
+const Inert = require('@hapi/inert');
+const Vision = require('@hapi/vision');
+const HapiSwagger = require('hapi-swagger');
 
 const goodOptions = {
   ops: {
@@ -23,6 +26,13 @@ const goodOptions = {
   },
 };
 
+const swaggerOptions = {
+  info: {
+    title: 'DNODE API DOCUMENTATION',
+    version: '0.1',
+  },
+};
+
 module.exports = [
   jwtAuth,
   basicAuth,
@@ -32,5 +42,10 @@ module.exports = [
     plugin: good,
     options: goodOptions,
   },
-  // TODO add different auth strategies, hapi swagger etc.
+  Inert,
+  Vision,
+  {
+    plugin: HapiSwagger,
+    options: swaggerOptions,
+  },
 ];
