@@ -32,7 +32,7 @@
     "@hapi/joi-date": "^2.0.1",
     "@hapi/vision": "^5.5.4",
     "awilix": "^4.2.2",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "dotenv": "^8.1.0",
     "hapi-auth-jwt2": "^8.7.0",
     "hapi-swagger": "^10.2.0",
