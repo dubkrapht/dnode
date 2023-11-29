@@ -32,10 +32,10 @@
     "@hapi/joi-date": "^2.0.1",
     "@hapi/vision": "^5.5.4",
     "awilix": "^4.2.2",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.1",
     "dotenv": "^8.1.0",
     "hapi-auth-jwt2": "^8.7.0",
-    "hapi-swagger": "^14.2.5",
+    "hapi-swagger": "^14.5.4",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
     "nodemailer": "^6.3.1"
