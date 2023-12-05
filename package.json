@@ -31,7 +31,7 @@
     "@hapi/joi": "^16.1.7",
     "@hapi/joi-date": "^2.0.1",
     "@hapi/vision": "^5.5.4",
-    "awilix": "^4.2.2",
+    "awilix": "^6.1.0",
     "bcrypt": "^5.0.1",
     "dotenv": "^8.1.0",
     "hapi-auth-jwt2": "^8.7.0",
