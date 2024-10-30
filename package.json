@@ -34,7 +34,7 @@
     "awilix": "^6.1.0",
     "bcrypt": "^5.0.1",
     "dotenv": "^8.1.0",
-    "hapi-auth-jwt2": "^9.0.0",
+    "hapi-auth-jwt2": "^10.7.0",
     "hapi-swagger": "^14.5.4",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
