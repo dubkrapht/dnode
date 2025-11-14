@@ -35,7 +35,7 @@
     "bcrypt": "^5.0.1",
     "dotenv": "^8.1.0",
     "hapi-auth-jwt2": "^9.0.0",
-    "hapi-swagger": "^14.5.4",
+    "hapi-swagger": "^17.0.0",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
     "nodemailer": "^6.9.9"
